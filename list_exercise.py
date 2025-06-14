@@ -1,3 +1,5 @@
+from unicodedata import digit
+
 color_list = ['红色', '绿色', '蓝色', '黄色', '品红色', '青色','red']
 print(color_list)
 
@@ -19,11 +21,11 @@ print(color_list)
 color_list.append("黑色")
 print(color_list)
 
-list = []
-list.append("1")
-list.append("2")
-list.append("3")
-print(list)
+lists = []
+lists.append("1")
+lists.append("2")
+lists.append("3")
+print(lists)
 
 # 在表中任意位置添加元素
 color_list.insert(0,"紫色")
@@ -68,3 +70,55 @@ print(color_list)
 
 # 确定列表的长度
 print(len(color_list))
+
+# 遍历整个列表
+for color in color_list:
+    print(color)
+
+for color in color_list:
+    print(f"color is:{color}")
+print("color end.")
+
+# 数值列表
+for value in range(1,5):
+    print(value)
+
+numbers = list(range(1,6))
+print(numbers)
+
+numbers = list(range(2,11,2))
+print(numbers)
+
+squares = []
+for value in range(1,11):
+    square = value ** 2
+    squares.append(square)
+print(squares)
+
+# 对数值列表统计
+digits = [1,2,3,4,5,6,7,8,9,0]
+print(min(digits))
+print(max(digits))
+print(sum(digits))
+
+# 列表推导式
+squares = [value ** 2 for value in range(1,11)]
+print(squares)
+
+# 切片
+# 显示0，1，2三个元素
+print(color_list[0:3])
+print(color_list[1:4])
+print(color_list[:2])
+print(color_list[2:])
+print(color_list[-2:])
+for color in color_list[:3]:
+    print(color)
+
+# 复制列表
+my_colors = color_list[:]
+print(my_colors)
+
+my_colors.append("橙色")
+print(my_colors)
+print(color_list)

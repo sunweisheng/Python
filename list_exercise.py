@@ -107,6 +107,7 @@ print(squares)
 
 # 切片
 # 显示0，1，2三个元素
+print(color_list)
 print(color_list[0:3])
 print(color_list[1:4])
 print(color_list[:2])

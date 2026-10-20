@@ -15,6 +15,7 @@ if not eligibility:
 else:
     print(eligibility)
     print(len(eligibility))
+# [... for ... if ...] 叫列表推导式；使用圆括号的 (... for ...) 叫生成器表达式
 eligibility = [document["title"] for document in documents if document["department"] == "财务" and  document["approved"] == True and document["score"] >= 80]
 if not eligibility:
     print("没有符合条件的资料")
@@ -25,6 +26,8 @@ for document in documents:
     if not document["approved"]:document["status"] = "待审核"
     else: document["status"] = "待完善" if document["score"] < 80 else "可用"
     print(document["title"],document["status"])
+# [... for ... if ...] 叫列表推导式；使用圆括号的 (... for ...) 叫生成器表达式
+print([(document["title"],document["status"]) for document in documents])
 statistics = {}
 for document  in documents:
     if document["department"] not in statistics:

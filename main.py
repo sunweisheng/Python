@@ -1,3 +1,4 @@
+from csv_tools import load_documents_csv
 from document_tools import *
 
 documents = [
@@ -14,6 +15,13 @@ print(find_document(documents,"测试标题"))
 
 print(filter_documents(documents,"财务",80))
 
+print("存文件：")
+save_documents(documents,"~/Documents/GitHub/Python/test.json")
+print("读文件：")
+print(load_documents("~/Documents/GitHub/Python/test.json"))
+
+print("通过CSV文件：")
+documents = load_documents_csv("data/documents.csv")
 print("存文件：")
 save_documents(documents,"~/Documents/GitHub/Python/test.json")
 print("读文件：")

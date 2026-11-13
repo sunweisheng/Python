@@ -1,5 +1,7 @@
+from api_app import router
 from csv_tools import load_documents_csv
 from document_tools import *
+from fastapi import FastAPI
 
 documents = [
     {"title": "报销流程", "department": "财务", "approved": True, "score": 92},
@@ -26,3 +28,6 @@ print("存文件：")
 save_documents(documents,"~/Documents/GitHub/Python/test.json")
 print("读文件：")
 print(load_documents("~/Documents/GitHub/Python/test.json"))
+
+api = FastAPI()
+api.include_router(router, prefix="/api", tags=["Documents"])
